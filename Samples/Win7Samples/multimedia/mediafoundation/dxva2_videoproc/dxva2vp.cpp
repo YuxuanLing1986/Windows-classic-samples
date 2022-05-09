@@ -242,9 +242,9 @@ const D3DCOLOR BACKGROUND_COLORS[] =
 //
 
 BOOL g_bD3D9HW  = TRUE;
-BOOL g_bD3D9SW  = TRUE;
+BOOL g_bD3D9SW  = FALSE;
 BOOL g_bDXVA2HW = TRUE;
-BOOL g_bDXVA2SW = TRUE;
+BOOL g_bDXVA2SW = FALSE;
 
 BOOL g_bWindowed        = TRUE;
 BOOL g_bTimerSet        = FALSE;
@@ -926,7 +926,7 @@ UpdateSubStream()
         return FALSE;
     }
 
-    g_bUpdateSubStream = FALSE;
+    g_bUpdateSubStream = TRUE;
 
     return TRUE;
 }
@@ -998,7 +998,7 @@ InitializeVideo()
     //
     // Draw the sub stream in the next video process.
     //
-    g_bUpdateSubStream = TRUE;
+    g_bUpdateSubStream = FALSE;
 
     return TRUE;
 }
